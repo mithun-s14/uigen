@@ -19,9 +19,9 @@ jobs:
       (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
-      issues: write
+      contents: read
+      pull-requests: read
+      issues: read
       id-token: write
       actions: read # Required for Claude to read CI results on PRs
     steps:
@@ -41,7 +41,7 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
 
-          prompt: |
+          custom_instructions: |
             The project is already set up with all dependencies installed.
             The server is already running at localhost:3000. Logs from it
             are being written to logs.txt. If needed, you can query the db
@@ -50,8 +50,8 @@ jobs:
 
           mcp_config: |
             {
-              "mcpServers": {
-                "playwright": {
+              "mcpServers:": {
+                "playwright"}: {
                   "command": "npx",
                   "args": [
                     "@playwright/mcp@latest",
