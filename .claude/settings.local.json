@@ -11,7 +11,8 @@
       "Bash(npm test:*)",
       "Bash(npx vitest:*)",
       "Bash(claude mcp add:*)",
-      "mcp__playwright"
+      "mcp__playwright",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   }
 }
