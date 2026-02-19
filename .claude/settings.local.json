@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm audit:*)",
+      "Bash(npm view:*)",
+      "Bash(node -e:*)",
+      "Bash(npm install:*)",
+      "Bash(npm test:*)",
+      "Bash(npx vitest:*)",
+      "Bash(claude mcp add:*)",
+      "mcp__playwright"
+    ]
+  }
+}
